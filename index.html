@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megasoft</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: gray;
+            color: black;
+        }
+
+        header {
+            background-color: gray;
+            color: black;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: white;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+        }
+
+        h2:hover {
+            color: black;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: darkgray;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(50, 50, 50, 255);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        section:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 200, 0.2);
+        }
+
+        img {
+	    max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: gray;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .social {
+            margin-top: 20px;
+            background-color: gray;
+        }
+
+        .social a {
+            display: inline-block;
+            margin-right: 10px;
+            transition: color 0.8 ease-in-out;
+        }
+
+        .social a:hover {
+            color: gray;
+        }
+       *  {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+button {
+	width: 50px;
+	height: 30px;
+	padding-top: 4px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 10px;
+	border: none;
+	background-color: black;
+	border-radius: 10%;
+	outline: none;
+	cursor: pointer;
+}
+button:active {
+	background-color: rgba(249, 253, 255,0.2);
+}
+li {
+	cursor: pointer;
+	margin-left: none;
+	
+}
+.header {
+	background-color: black;
+}
+li:hover {
+	background-color: rgba(249, 253, 255,0.2);
+}
+hr {
+	margin-bottom: 1px;
+	background-color: white;
+	border: 1.3px solid #fff;
+	border-radius: 0.5px;
+}
+nav {
+	width: 100%;
+	margin-left: 0;
+	background-color:  white;
+}
+.nav-list {
+	list-style: none;
+	margin-left: none;
+	padding: 10px 0;
+	padding-left: 30px;
+}
+a {
+	text-decoration: none;
+	color: black;
+	opacity: 0.7;
+}
+a span {
+	opacity: 0.7;
+	margin-right: 30px;
+}
+.disabled-menu {
+	display: none;
+}
+.enabled-menu {
+	display: block;
+}
+.color {
+	color: white ;
+	opacity: 9.0;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?d9u80u');
+  src:  url('fonts/icomoon.eot?d9u80u#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?d9u80u') format('truetype'),
+    url('fonts/icomoon.woff?d9u80u') format('woff'),
+    url('fonts/icomoon.svg?d9u80u#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-subscriptions:before {
+  content: "\e900";
+}
+.icon-flame:before {
+  content: "\e901";
+}
+.icon-search:before {
+  content: "\e902";
+}
+.icon-play:before {
+  content: "\e912";
+}
+.icon-history:before {
+  content: "\e94d";
+}
+.icon-clock2:before {
+  content: "\e94f";
+}
+.icon-upload3:before {
+  content: "\e9c8";
+}
+.icon-thumbs-up:before {
+  content: "\e905";
+}
+.icon-home:before {
+  content: "\e903";
+}
+.icon-menu:before {
+  content: "\e904";
+}
+.btn-primary {
+  background-color: blue;
+  color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 0.6px 1px;
+}
+        #Respuestas {
+            margin-bottom: 20px;
+            overflow-y: auto;
+            height: 200px; 
+        }
+        #asistente{
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px; 
+            right: 20px; 
+            z-index: 9999; 
+        }
+        #asistente-container {
+            display: none;
+            position: fixed;
+            bottom: 60px; 
+            right: 10px; 
+            background-color: gray;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 50px rgba(50, 50, 50, 255);
+            z-index: 9998; 
+        }
+        #asistente-container ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #asistente-container ul li {
+            margin-bottom: 10px;
+        }
+
+        @keyframes deslizarRespuestas {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+          .deslizar-animacion {
+            animation: deslizarRespuestas 3s ease-in;
+        }
+        #Logo {
+   box-shadow: 0 0 10px 5px rgba(100, 100, 100, 255);
+	border-radius: 50%;
+}
+</style>
+<body>
+<div id="menu">
+		<ul>
+			<li  class="col"><a href="#Servicios"><span id="home" class="icon-home"></span>Servicios</a></li>
+			<li  class="col"><a href="#Productos"><span id="trending" class="icon-flame"></span>Productos</a></li>
+			<li class="col"><a href="#cita"><span id="Agendar" class="icon-subscriptions"></span>Agendar cita</a></li>
+			<li class="col"><a href="#Contactos"><span id="Agendar" class="icon-subscriptions"></span>Contacto</a></li>
+			<li class="col"><a href="#Preguntas o Comentarios"><span id="Agendar" class="icon-subscriptions"></span>Preguntas o Comentarios</a></li>
+			<li class="col"><a href="#orange es"><span id="Agendar" class="icon-subscriptions"></span>Redes sociales</a></li>
+		</ul>
+		<script></script>
+</div>
+<header class="white text-white p-4" id="Inicio">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="https://i.postimg.cc/9FT7Sm8w/Screenshot-2024-04-24-20-00-50-217-com-microsoft-bing.png" alt="Logo del Centro de Reparación" width="100"id="Logo">
+            </div>
+            <div class="col-sm-8">
+                <h1 style="color: black;"id="titulo1">REPARACIÓN TEC</h1>
+                <p class="lead" id="titulo2"><b>Solución confiable para tus problemas informáticos</b></p>
+            </div>
+            
+
+</header>
+<div class="container text-center">
+  <div class="row">
+    <div>
+    <section id="Bienvenida">
+    <h2 style="color: white ">Bienvenidos</h2>
+    <p>
+
+¡Bienvenid@! Nos alegra mucho tenerte aquí. Si estás buscando algo en particular o tienes alguna pregunta, no dudes en decirnos. Estamos aquí para ayudarte en todo lo que necesites. ¡Esperamos que tu experiencia con nosotros sea excelente!</p>
+</section>
+<div class="container text-center">
+  <div class="row">
+    <div>
+    <section>
+    <h2 style="color: white ">¿Quienes somos?</h2>
+    <p>Somos alumnos del COLEGIO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS, plantel Pénjamo. Hemos desarrollado esta página web para poder promocionar nuestra empresa, nos dedicamos al soporte y mantenimiento de equipos de cómputo</p>
+   </div>
+  </div>
+</div>
+</section>
+<div class="container text-center">
+  <div class="row">
+    <div>
+    <section>
+    <h2 style="color: white ">Misión</h2>
+    <p>Impulsar en los jóvenes una formación integral de nivel medio superior a través de un proceso educativo de calidad con enfoque científico, tecnológico y humanista para fortalecer su proyecto de vida y el desarrollo sustentable de su entorno.</p>
+   </div>
+  </div>
+</div>
+</section>
+    </div>
+    <div>
+      <section>
+    <h2 style="color: white ">Visión</h2>
+    <p>Ser una institución líder de educación media superior que forme integralmente a jóvenes con enfoque científico, tecnológico y humanista de excelencia a través de planes, programas y procesos de calidad para contribuir al desarrollo creativo y sustentable de su entorno.</p>
+</section>
+    </div>
+    <div>
+      <section>
+    <h2 style="color: white ">Valores</h2>
+    <p>Honestidad, Respeto, Responsabilidad, Solidaridad, Compromiso, Trabajo Colaborativo y Lealtad.</p>
+</section>
+    </div>
+</div>
+
+<section id="Servicios">
+    <h2><a href="#Inicio" style="color: white ">Servicios</a></h2>
+        <ul class="list-unstyled">
+            <li>*Reparación de hardware y software.</li>
+            <li>*Eliminación de virus y malware.</li>
+            <li>*Actualización de sistemas operativos y controladores.</li>
+            <li>*Recuperación de datos perdidos.</li>
+            <li>*Optimización de rendimiento.</li>
+            <h6 style="color: red ">Nota: Puede variar el precio dependiendo del servicio y dispositivo.</h6>
+        </ul>
+</section>
+
+<section id="Productos">
+    <h2><a href="#Inicio" style="color: white ">Productos</a></h2>
+    <p>Ofrecemos una amplia gama de productos relacionados con la informática:</p>
+    <div class="col" style="background-color: dark gray">
+    <label for="producto" class="col-xl-6">Selecciona un producto:</label>
+    <select id="producto">
+        <option value="desktop">Computadora de escritorio- $10,000MXN</option>
+        <option value="laptop">Laptop - $9,000MXN</option>
+        <option value="perifericos">Periféricos (teclados, ratones, etc.) - $150MXN</option>
+        <option value="software">Software - $300MXN</option>
+        <option value="accesorios">Accesorios diversos - $80MXN</option>
+    </select>
+    
+    <label for="cantidad" class="col-6">Cantidad:</label>
+    <input type="number" id="cantidad" min="1" value="1">
+    <div style="text-align: center;">
+    <button1 onclick="calcularPrecio()"class="btn btn-primary" style="width:200px" type="submit">Calcular</button>
+    
+    
+    <p id="precioTotal"></p>
+</section>
+
+<script>
+    function calcularPrecio() {
+        var producto = document.getElementById("producto").value;
+        var cantidad = parseInt(document.getElementById("cantidad").value); 
+        var precioUnitario = obtenerPrecioUnitario(producto);
+        
+        console.log("Producto seleccionado:", producto);
+        console.log("Cantidad:", cantidad);
+        console.log("Precio unitario:", precioUnitario);
+        
+        if (precioUnitario !== null) {
+            var precioTotal = cantidad * precioUnitario;
+            document.getElementById("precioTotal").innerHTML = "Precio Total: $" + precioTotal;
+        } else {
+            document.getElementById("precioTotal").innerHTML = "Selecciona un producto válido.";
+        }
+    }
+    
+    function obtenerPrecioUnitario(producto) {
+        switch (producto) {
+            case "desktop":
+                return 10000;
+            case "laptop":
+                return 9000;
+            case "perifericos":
+                return 150;
+            case "software":
+                return 300;
+            case "accesorios":
+                return 80;
+            default:
+                return null;
+        }
+    }
+</script>
+
+<section id="cita">
+    <h2><a href="#Inicio" style="color: white ">¡Agenda tu cita!</a></h2>
+    <p>¡Agenda tu cita desde aquí, Escoje el dia en el que asistiras, danos tu nombre, y el asunto por el cuál irás!.</p>
+    <div>
+  <label for="date">Fecha:</label>
+  <input type="date" id="date">
+  <button onclick="agendarCita()"class="btn btn-primary" style="width:200px">Agendar Cita</button>
+</div>
+<div id="mensaje"></div>
+<script>
+function agendarCita() {
+  var fecha = document.getElementById('date').value;
+  document.getElementById('mensaje').innerHTML = "Cita agendada para el " + fecha;
+}
+</script>
+</section>
+
+<section id="Contactos">
+    <h2><a href="#Inicio" style="color: white ">Contactos</a></h2>
+    <p>¡Estamos aquí para ayudarte! Puedes contactarnos a través de los siguientes medios:</p>
+    <ul>
+        <li>Teléfono: 123-456-789</li>
+        <li>Visítanos en nuestra tienda:</li>
+    </ul>
+    <p>Dirección: Calle Aldama #123, Pénjamo, Guanajuato, México</p>
+</section>
+
+<section id="Preguntas o Comentarios">
+    <h2><a href="#Inicio" style="color: white ">Comentarios</a></h2>
+    <p>¿Tienes preguntas o comentarios sobre nuestro trabajo? ¡Contáctanos!</p>
+    
+    <form action="pen.aescamillar22@alumnos.cecyteg.edu.mx" method="post" enctype="text/plain">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" requiwhite ><br><br>
+        
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" requiorange ><br><br>
+        
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="3" cols="20" requiwhite ></textarea><br><br>
+        
+        <button value="Enviar" class="btn btn-primary" style="width:200px">Enviar</button>
+    </form>
+</section>
+
+<section>
+    <h6><a href="#Inicio" style="color: black">IR AL INICIO DE ESTE ARTICULO </a></h6>
+</section>
+
+</section>
+<footer class="white text-white py-3" id="white es">
+    <div class="container text-center">
+  <div class="row">
+  <div class="col-12"  style="background-color: purple;">Nuestras Redes:</div>
+	  <a href="https://www.facebook.com/cecyteguanajuatoplantelpenjamo?mibextid=JRoKGi"class="col-4">
+    <img src="https://static.vecteezy.com/system/resources/previews/018/930/698/original/facebook-logo-facebook-icon-transparent-free-png.png" alt="Facebook "width="50">
+	  </a>
+	<a href="https://x.com/CECyTEG_Penjamo?s=20"class="col-4">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9f6PDp6MyyVhybkN0BjLh5if1xpl6jMHEYJ8Re10GOsNmUF5qJCP2quY&s=10" alt="X" width="50">
+	</a>
+	  
+	<a href="https://www.instagram.com/megasoftoficial.mx?utm_source=qr&igsh=NHN5Y25zM3B3bGE2"class="col-4">
+    <img src="https://static.vecteezy.com/system/resources/previews/018/930/691/original/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram " width="50">
+	</a>
+	  
+	  
+      <p class="m-0" style="color: black">&#169; DERECHOS RESERVADOS POR REPARACIÓN TEC</p>
+    </div>
+  </div>
+</div>
+<div id="asistente-container">
+        <div id="Respuestas">
+            <ul id="Respuestas-lista"></ul>
+        </div>
+        <input id="pregunta">
+        <button class="btn btn-primary" onclick="responder()">Enviar</button>
+        <button class="btn btn-primary" onclick="cerrarAsistente()">Cerrar</button>
+    </div>
+
+    <img src="https://cdn-icons-png.flaticon.com/512/10273/10273553.png" onclick="mostrarAsistente()"width="100" id="asistente">
+    
+    <script>
+        let Respuestas = {
+            "1": "La Pantalla Azul de la Muerte puede ser causada por diversos problemas, como errores de hardware, problemas de controladores o fallos en el sistema operativo. Te recomendamos buscar el código de error específico que se muestra en la pantalla y buscar soluciones en línea, o contactar a un técnico especializado.",
+            "2": "Una computadora lenta puede deberse a varios factores, como falta de espacio en el disco duro, exceso de programas en ejecución, malware o hardware obsoleto. Puedes intentar liberar espacio en disco, desinstalar programas innecesarios, ejecutar un escaneo antivirus o considerar una actualización de hardware si es necesario.",
+            "3": "Si sospechas que tu computadora está infectada con virus o malware, es importante ejecutar un escaneo completo con un programa antivirus actualizado. Además, asegúrate de mantener tu sistema operativo y software actualizados, y evita hacer clic en enlaces o descargar archivos de fuentes desconocidas.",
+            "4": "Los problemas de conectividad a Internet pueden ser causados por problemas con el enrutador, configuraciones incorrectas, interferencias, o problemas con el proveedor de servicios de Internet. Puedes intentar reiniciar tu enrutador, verificar las conexiones de white , o contactar a tu proveedor de servicios de Internet para obtener ayuda.",
+            "5": "Los problemas de sobrecalentamiento pueden ser causados por obstrucciones en las ventilaciones, acumulación de polvo, o problemas con el sistema de enfriamiento. Puedes intentar limpiar las ventilaciones, usar una base de refrigeración, o verificar el funcionamiento de los ventiladores y disipadores de calor.",
+            "6": "Los fallos del disco duro pueden ser indicativos de problemas con el disco duro, como sectores defectuosos, corrupción de datos, o fallas mecánicas. Es importante respaldar tus datos de inmediato y considerar reemplazar el disco duro lo antes posible. Puedes usar herramientas de diagnóstico de disco duro para verificar la salud del disco.",
+            "7": "Los problemas de hardware pueden incluir fallas en componentes como la memoria RAM, la tarjeta gráfica, o el procesador. Puedes intentar reiniciar tu computadora y verificar las conexiones de hardware. Si los problemas persisten, es posible que necesites reemplazar el hardware defectuoso o contactar a un técnico especializado.",
+            "8": "Los problemas de software pueden ser causados por errores del sistema operativo, controladores desactualizados, o conflictos entre programas. Puedes intentar actualizar tu sistema operativo y controladores, desinstalar programas innecesarios, o ejecutar herramientas de reparación de software.",
+            "9": "Los problemas de pantalla pueden ser causados por fallos en el monitor, problemas de la tarjeta gráfica, o controladores desactualizados. Puedes intentar conectar tu computadora a otro monitor para descartar problemas de hardware, actualizar los controladores de la tarjeta gráfica, o verificar la configuración de pantalla en el sistema operativo.",
+            "10": "Los problemas de alimentación pueden ser causados por problemas con la batería, el adaptador de corriente, o la fuente de alimentación. Puedes intentar conectar tu computadora a otra toma de corriente, verificar si la batería está cargada correctamente, o reemplazar el adaptador de corriente si es necesario."
+        };
+
+        function responder() {
+    let mensaje = document.getElementById("pregunta").value.toLowerCase();
+    document.getElementById("pregunta").value = "";
+    let palabras = mensaje.split(" ");
+    let RespuestaEncontrada = false;
+    let RespuestasHTML = "";
+
+    for (let palabra of palabras) {
+        let Respuesta = Respuestas[palabra];
+        if (Respuesta) {
+            RespuestasHTML += "<li>" + Respuesta + "</li>";
+            RespuestaEncontrada = true;
+        }
+    }
+
+    if (RespuestaEncontrada) {
+        document.getElementById("Respuestas-lista").innerHTML = RespuestasHTML;
+    } else {
+        document.getElementById("Respuestas-lista").innerHTML = "<li>¡Bienvenido al Asistente! Por favor, elige una opción para obtener ayuda con los problemas más comunes:</li><li>1. Pantalla Azul de la Muerte</li><li>2. Computadora Lenta</li><li>3. Virus o Malware</li><li>4. Problemas de Conectividad a Internet</li><li>5. Problemas de Sobrecalentamiento</li><li>6. Fallos del Disco Duro</li><li>7. Problemas de Hardware</li><li>8. Problemas de Software</li><li>9. Problemas de Pantalla</li><li>10. Problemas de Alimentación</li><li>¡Gracias por ponerte en contacto! Si necesitas más ayuda, no dudes en volver.</li>";
+    }
+}
+
+
+        function mostrarAsistente() {
+            let asistente = document.getElementById('asistente-container');
+            let imagen = document.querySelector('img');
+            imagen.style.display = 'none';
+            asistente.style.display = 'block';
+        }
+        
+        function cerrarAsistente() {
+            let asistente = document.getElementById('asistente-container');
+            let imagen = document.querySelector('img');
+            asistente.style.display = 'none';
+            imagen.style.display = 'block';
+        }
+ </script>
+                    
+</body>
+</html>
